@@ -1,0 +1,59 @@
+{
+    "name": "faisuc/pin-payments",
+    "description": "Accept payments using Pin Payments in your Laravel application.",
+    "keywords": [
+        "faisuc",
+        "pin-payments"
+    ],
+    "homepage": "https://github.com/faisuc/pin-payments",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Neil Carlo Sucuangco",
+            "email": "succute@yahoo.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "~6.0",
+        "illuminate/support": "^6.0",
+        "moneyphp/money": "^3.3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "files": [
+            "src/Helpers/helpers.php"
+        ],
+        "psr-4": {
+            "Faisuc\\PinPayments\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Faisuc\\PinPayments\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Faisuc\\PinPayments\\PinPaymentsServiceProvider"
+            ],
+            "aliases": {
+                "PinPayments": "Faisuc\\PinPayments\\PinPaymentsFacade"
+            }
+        }
+    }
+}
